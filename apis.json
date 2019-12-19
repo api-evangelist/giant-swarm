@@ -1,0 +1,83 @@
+{
+    "name": "Giant Swarm",
+    "description": "Giant Swarm\u2019s managed microservices infrastructure enables enterprises to run agile, resilient, distributed systems at scale, while removing the tasks related to managing the complex underlying infrastructure.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/19929-giant-swarm.jpg",
+    "tags": [
+        "api provider",
+        "api service provider",
+        "have api",
+        "kubernetes",
+        "microservices",
+        "networking",
+        "networks",
+        "orchestration",
+        "profile"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/giant-swarm\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Giant Swarm",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/19929-giant-swarm.jpg",
+            "humanURL": "http:\/\/giantswarm.io",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/giant-swarm-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/blog.giantswarm.io\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "https:\/\/blog.giantswarm.io\/rss\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/giant-swarm"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/docs.giantswarm.io\/"
+        },
+        {
+            "type": "Email",
+            "url": "support@giantswarm.io"
+        },
+        {
+            "type": "Email",
+            "url": "oliver@giantswarm.io"
+        },
+        {
+            "type": "Email",
+            "url": "henning@giantswarm.io"
+        },
+        {
+            "type": "Email",
+            "url": "thea@giantswarm.io"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/giantswarm"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/giantswarm"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/giantswarm.io"
+        }
+    ]
+}
