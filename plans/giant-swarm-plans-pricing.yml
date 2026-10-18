@@ -26,3 +26,15 @@ note: |
   The platform is offered as a managed service with battle-tested Kubernetes
   components, observability, security, networking, and developer tools.
   Pricing appears to be negotiated based on enterprise needs.
+x-canonical:
+  generated: '2026-10-18'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Enterprise Platform
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
