@@ -1,0 +1,29 @@
+generated: '2026-10-18'
+method: searched
+source: https://www.giantswarm.io, https://docs.giantswarm.io/overview/architecture/authentication/
+description: Standards and certifications conformed to by Giant Swarm
+standards:
+- id: oauth2
+  conforms: true
+  evidence: Documentation mentions OAuth2 via Dex for authentication
+  source: https://docs.giantswarm.io/overview/architecture/authentication/
+- id: oidc
+  conforms: true
+  evidence: Documentation mentions OIDC for workload clusters
+  source: https://docs.giantswarm.io/tutorials/access-management/authentication/user/
+- id: kubernetes
+  conforms: true
+  evidence: Kubernetes certified service provider
+  source: https://www.giantswarm.io
+- id: cncf-ai-conformance
+  conforms: true
+  evidence: CNCF AI-Conformance Certified
+  source: https://www.giantswarm.io
+- id: iso-27001
+  conforms: true
+  evidence: ISO 27001 certified
+  source: https://www.giantswarm.io
+note: |
+  Giant Swarm is a CNCF-certified Kubernetes service provider with AI-Conformance certification.
+  They implement OAuth2/OIDC for authentication and hold ISO 27001 certification.
+  No evidence found for other standards like FHIR, FAPI, SCIM, JSON:API, etc.

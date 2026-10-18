@@ -1,23 +1,159 @@
 aid: giant-swarm
+
 name: Giant Swarm
-description: 'Giant Swarm is a company surfaced via the API Evangelist harvest backlog (source: kin-score-markets)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Giant Swarm offers a curated, managed platform engineering stack built on Kubernetes, providing battle-tested components for fleet management, observability, security, networking, connectivity, a developer portal, AI/agent platforms and application management across hybrid and multi-cloud environments. Its documentation covers getting started guides, tutorials, an API and CLI reference, support and training, and changes and releases.
+
 url: https://raw.githubusercontent.com/api-evangelist/giant-swarm/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:kin-score-markets
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-18 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-18'
+
 modified: '2026-10-18'
+
 tags:
 - Company
-apis: []
+- Kubernetes
+- Platform Engineering
+- Cloud-Native
+- Observability
+- Developer Platform
+- Multi-Cloud
+
+tags_raw:
+- Company
+- Kubernetes
+- Platform Engineering
+- Cloud Native
+- Observability
+- Developer Platform
+- Multi-Cloud
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://www.giantswarm.io/hubfs/raw_assets/public/loom-2026/images/og/giant-swarm-default-og.jpg
+
 common:
+- type: Plans
+  url: plans/giant-swarm-plans-pricing.yml
+- type: CLI
+  url: cli/giant-swarm-cli.yml
+- type: ChangeLog
+  url: changelog/giant-swarm-changelog.yml
+- type: Conventions
+  url: conventions/giant-swarm-conventions.yml
+- type: Security
+  url: https://www.giantswarm.io/responsible-disclosure
+- type: Authentication
+  url: authentication/giant-swarm-authentication.yml
+- type: Lifecycle
+  url: lifecycle/giant-swarm-lifecycle.yml
+- type: Conformance
+  url: conformance/giant-swarm-conformance.yml
+- type: LLMsTxt
+  url: llms/giant-swarm-llms.txt
+- type: MCPServer
+  url: mcp/giant-swarm-mcp.yml
+- type: SecurityTxt
+  url: well-known/giant-swarm-security.txt
+- type: SecurityTxt
+  url: well-known/giant-swarm-giantswarm-security.txt
+- type: WellKnown
+  url: well-known/giant-swarm-well-known.yml
+- type: Hosts
+  url: hosts/giant-swarm-hosts.yml
+- type: Vendors
+  url: vendors/giant-swarm-vendors.yml
+- type: SDKs
+  url: packages/giant-swarm-packages.yml
+- type: Packages
+  url: packages/giant-swarm-packages.yml
+- type: VulnerabilityDisclosure
+  url: security/giant-swarm-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/giant-swarm-domain-security.yml
 - type: Website
   url: https://giantswarm.io
+- type: Documentation
+  url: https://docs.giantswarm.io
+- type: APIReference
+  url: https://docs.giantswarm.io/reference/
+- type: GettingStarted
+  url: https://docs.giantswarm.io/getting-started/
+- type: Support
+  url: https://docs.giantswarm.io/support/
+- type: ChangeLog
+  url: https://docs.giantswarm.io/changes/
+- type: DeveloperPortal
+  url: https://docs.giantswarm.io/overview/developer-portal/
+- type: Blog
+  url: https://www.giantswarm.io/blog/
+- type: GitHubOrganization
+  url: https://github.com/giantswarm
+- type: PrivacyPolicy
+  url: https://www.giantswarm.io/privacy-policy
+- type: Contact
+  url: https://www.giantswarm.io/contact/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/giant-swarm/
+- type: YouTube
+  url: https://www.youtube.com/user/GiantSwarm
+
+apis:
+- aid: giant-swarm:platform-api
+  name: Giant Swarm Platform API
+  description: Giant Swarm's platform API is a Kubernetes API that operates on each customer management cluster, offering custom resources (Cluster API clusters, App Platform apps, catalogs, policies) to create and update workload clusters and deploy applications, accessed via kubectl with the kubectl-gs plugin, GitOps (Flux) or the developer portal. Each management cluster has its own API endpoint, https://api.<management cluster base domain>/, provided by Giant Swarm.
+  humanURL: https://docs.giantswarm.io/getting-started/access-to-platform-api/
+  baseURL: https://api.{managementClusterBaseDomain}/
+  tags:
+  - Kubernetes
+  - Platform Engineering
+  properties:
+  - type: Documentation
+    url: https://docs.giantswarm.io/getting-started/access-to-platform-api/
+  - type: APIReference
+    url: https://docs.giantswarm.io/reference/platform-api/
+  - type: Authentication
+    url: https://docs.giantswarm.io/tutorials/access-management/authentication/user/
+  - type: GitHubRepository
+    url: https://github.com/giantswarm/apiextensions-application
+- aid: giant-swarm:observability-platform-api
+  name: Giant Swarm Observability Platform API
+  description: The Giant Swarm Observability Platform API imports and exports metrics, logs and traces through upstream-compatible endpoints (Prometheus remote write and query API, Loki push and query API, Tempo/OTLP) on a shared per-installation host https://observability.<domain_name>, authenticated with an OIDC bearer token plus an X-Scope-OrgID tenant header; it must be enabled for an installation by the Account Engineer.
+  humanURL: https://docs.giantswarm.io/overview/observability/data-management/data-import-export/observability-platform-api/
+  baseURL: https://observability.{domain_name}
+  tags:
+  - Observability
+  properties:
+  - type: Documentation
+    url: https://docs.giantswarm.io/overview/observability/data-management/data-import-export/observability-platform-api/
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website and link pointers read from giantswarm.io homepage and docs.giantswarm.io index.
+  evidence:
+  - url: https://giantswarm.io
+    status: 200
+  - url: https://docs.giantswarm.io
+    status: 200
+  - url: https://docs.giantswarm.io/reference/
+    status: 200
+x-enrichment:
+  date: '2026-10-18'
+  status: enriched
+  artifacts_added: 27
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=deepseek,regulatory=anthropic

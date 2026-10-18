@@ -1,0 +1,9 @@
+generated: '2026-10-18'
+method: none
+source: https://docs.giantswarm.io
+description: UI components and embeddable surfaces for Giant Swarm
+families: []
+note: |
+  No client-side UI components or embeddable surfaces documentation found.
+  Giant Swarm provides a Developer Portal and observability dashboards,
+  but these appear to be full applications rather than embeddable components.

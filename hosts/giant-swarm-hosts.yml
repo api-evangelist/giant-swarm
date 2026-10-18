@@ -1,0 +1,123 @@
+generated: '2026-10-18'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 4
+  other_domain: 2
+  platform: 3
+  roles:
+  - api
+  - marketing
+  - other
+  - portal
+  - source
+  - website
+hosts:
+- host: api.giantswarm.io
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: giantswarm.io
+  role: api
+  relation: own
+- host: api.{managementclusterbasedomain}
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: api.{managementclusterbasedomain}
+  role: api
+  relation: other-domain
+- host: docs.giantswarm.io
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  - APIReference
+  - GettingStarted
+  - Support
+  - ChangeLog
+  - DeveloperPortal
+  serves:
+  - docs
+  registrable_domain: giantswarm.io
+  role: portal
+  relation: own
+- host: giantswarm.io
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  - hosting
+  vendor: cloudflare
+  registrable_domain: giantswarm.io
+  role: website
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: observability.{domain_name}
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: observability.{domain_name}
+  role: other
+  relation: other-domain
+- host: www.giantswarm.io
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - Security
+  - Blog
+  - PrivacyPolicy
+  - Contact
+  serves: []
+  registrable_domain: giantswarm.io
+  role: marketing
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.youtube.com
+  found_by:
+  - pointer
+  types:
+  - YouTube
+  serves: []
+  registrable_domain: youtube.com
+  role: other
+  relation: platform

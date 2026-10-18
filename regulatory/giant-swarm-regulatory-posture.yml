@@ -1,0 +1,68 @@
+generated: '2026-10-18'
+method: searched
+probe: true
+source: https://www.giantswarm.io/privacy-policy
+description: >-
+  Horizontal regulatory signals HARVESTED from what Giant Swarm GmbH (Cologne, Germany)
+  publishes; nothing here decides which regime applies. The only legal page on the site is the
+  combined "Terms & Privacy" page at /privacy-policy (GDPR-framed). It lists data subject rights
+  with a contact, and gives retention statements. Probed 2026-10-18 on www.giantswarm.io:
+  /imprint, /legal, /legal/subprocessors, /legal/dpa, /subprocessors, /dpa, /accessibility,
+  /trust, /security, /transparency, /terms and /ai all returned 404 (redirected under /blog/). No
+  subprocessor list, DPA, accessibility statement, SBOM, transparency report, AI-transparency
+  page or data-residency page was found. The docs pages on workload cluster releases and cluster
+  upgrades (docs.giantswarm.io) state no support period. The policy names Google Analytics and
+  HubSpot as website "cookie suppliers" acting as data processors, but this is not a
+  subprocessor list for the product, so no subprocessors signal is recorded. Its only opt-out
+  mechanism is the browser "do-not-track" option, and it does not mention Global Privacy
+  Control, so no GPC signal is recorded.
+signals:
+  data_subject_request:
+    url: https://www.giantswarm.io/privacy-policy
+    section: '5. Your Rights'
+    contact: thea@giantswarm.io
+    rights: [information, access, rectification, deletion, restriction, portability, objection, automated-decision-making, withdraw-consent]
+    note: >-
+      Lists the GDPR Art. 13, 15-18 and 20-22 rights and gives an email, phone and postal channel
+      for using them. It warns that identity may be verified first. No self-service portal or API
+      is documented.
+    evidence:
+      - source: https://www.giantswarm.io/privacy-policy
+        http_status: 200
+        fetched: '2026-10-18'
+        quote: >-
+          If you have any questions in relation to this notice, or wish to assert any of your
+          rights, please contact us using the contact details included below. To protect your
+          rights and your privacy and to validate communications received in relation to this
+          notice, we may request a confirmation and proof of your identity.
+      - source: https://www.giantswarm.io/privacy-policy
+        http_status: 200
+        fetched: '2026-10-18'
+        quote: >-
+          Where the processing takes place on the basis of your consent or contract, and is
+          carried out by automated means, you have the right to request that we provide your
+          personal data to you in a machine-readable format.
+  data_retention:
+    url: https://www.giantswarm.io/privacy-policy
+    section: 'Retention period'
+    stated_period: 'as long as the web servers serving the site are up'
+    note: >-
+      Web server logs are erased when a server restarts, which the policy says often happens
+      weekly. Business-development, newsletter and contact data are kept for as long as there is
+      a legitimate reason or other legal ground, with no fixed period. All of this covers the
+      website and business contacts, not customer cluster data.
+    evidence:
+      - source: https://www.giantswarm.io/privacy-policy
+        http_status: 200
+        fetched: '2026-10-18'
+        quote: >-
+          The log data is stored as long as the web servers serving the site are up. Once they are
+          restarted, the log data is erased. This often happens weekly.
+      - source: https://www.giantswarm.io/privacy-policy
+        http_status: 200
+        fetched: '2026-10-18'
+        quote: >-
+          We retain personal data only for as long as there is a legitimate reason or other legal
+          ground to do so, and will keep these legal bases under review. If there is no longer a
+          legal ground for the data to be retained, we will erase personal data securely, or in
+          some cases anonymize it.

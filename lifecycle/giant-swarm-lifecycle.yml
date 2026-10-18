@@ -1,0 +1,13 @@
+generated: '2026-10-18'
+method: searched
+source: https://docs.giantswarm.io/changes/
+description: Lifecycle management for Giant Swarm platform
+versioning: Semantic versioning with regular releases
+deprecation: Components deprecated through changelog announcements
+status_page: null
+note: |
+  Giant Swarm maintains a detailed changelog at https://docs.giantswarm.io/changes/
+  with regular updates to platform components, apps, and documentation.
+  No explicit SLA or deprecation policy document found, but changes are tracked
+  through the changelog with version numbers and release notes.
+  No dedicated status page found.

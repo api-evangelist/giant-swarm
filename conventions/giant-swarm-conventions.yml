@@ -1,0 +1,36 @@
+generated: '2026-10-18'
+method: derived
+source: https://docs.giantswarm.io/reference/platform-api/
+description: API conventions for Giant Swarm platform
+idempotency:
+  coverage: none
+  note: Kubernetes-style APIs typically don't use idempotency keys; operations are idempotent by design where appropriate
+pagination:
+  style: continuation_token
+  params: continue, limit
+  note: Follows Kubernetes-style pagination with continuation tokens
+versioning:
+  scheme: url_path
+  pattern: /apis/{group}/{version}/...
+  note: Uses Kubernetes API versioning pattern with API groups and versions
+error_envelope:
+  format: kubernetes_status
+  fields: status, message, reason, code, details
+  note: Returns Kubernetes Status objects for errors
+request_id:
+  header: X-Request-Id
+  purpose: tracing
+  note: Request IDs for tracing requests through the system
+reversibility:
+  note: Kubernetes-style APIs support undo/rollback operations through kubectl and GitOps workflows
+  window: Configurable through GitOps reconciliation periods
+dry_run_mode:
+  note: Kubernetes APIs support dry-run mode for most mutating operations
+note: |
+  Giant Swarm's platform API follows Kubernetes conventions:
+  - Kubernetes-style pagination with continuation tokens
+  - Kubernetes Status objects for errors
+  - API versioning through URL paths (/apis/{group}/{version})
+  - Request tracing with X-Request-Id headers
+  - No specific idempotency key mechanism documented
+  - Reversibility through GitOps and kubectl rollback operations

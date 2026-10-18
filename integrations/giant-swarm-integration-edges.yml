@@ -1,0 +1,28 @@
+generated: '2026-10-18'
+method: none
+source:
+- https://zapier.com/apps/giant-swarm/integrations
+- https://n8n.io/integrations/giant-swarm/
+- https://composio.dev/toolkits/giant-swarm
+- https://monid.ai/tools/giant-swarm
+checked:
+- https://composio.dev/toolkits/giant-swarm
+- https://docs.giantswarm.io
+- https://monid.ai/tools/giant-swarm
+- https://n8n.io/integrations/giant-swarm/
+- https://www.giantswarm.io/partners/
+- https://zapier.com/apps/giant-swarm/integrations
+- https://zapier.com/apps/giantswarm/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
+note: 'No integration marketplace listings found for Giant Swarm on Zapier or other platforms.
+
+  The partners page shows technology partners (AWS, Azure, VMware, etc.) but not
+
+  integration partners for workflow automation.
+
+  As a Kubernetes platform, integrations are typically through Kubernetes APIs
+
+  and GitOps workflows rather than app marketplace integrations.'

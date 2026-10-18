@@ -1,0 +1,28 @@
+generated: '2026-10-18'
+method: searched
+source: https://www.giantswarm.io
+name: Giant Swarm pricing
+audience: business-product
+pricing_basis: negotiated
+published: false
+delivery:
+  delivery: managed
+plans:
+- name: Enterprise Platform
+  description: Managed Kubernetes platform with battle-tested components
+  price_text: Contact us
+  features:
+  - Curated Kubernetes distribution
+  - Observability stack (Prometheus, Loki, Tempo)
+  - Security and networking components
+  - Developer portal
+  - AI/Agent platform
+  - Multi-cloud and hybrid support
+  - Expert operations or expert support
+  limits: []
+note: |
+  Giant Swarm offers enterprise pricing through direct contact.
+  The website shows "Contact us" buttons throughout for pricing inquiries.
+  The platform is offered as a managed service with battle-tested Kubernetes
+  components, observability, security, networking, and developer tools.
+  Pricing appears to be negotiated based on enterprise needs.

@@ -1,0 +1,65 @@
+name: Giant Swarm Muster MCP server
+type: MCPServer
+generated: '2026-10-18'
+method: searched
+status: official
+source:
+- https://docs.giantswarm.io/getting-started/ai-agent-setup/
+- https://docs.giantswarm.io/reference/muster/meta-tools/
+- https://docs.giantswarm.io/reference/muster/installation/
+- https://docs.giantswarm.io/llms.txt
+description: >-
+  Giant Swarm's Agent Platform exposes its customers' management clusters to AI agents through
+  Muster, an MCP aggregator that sits in front of mcp-kubernetes (one per management cluster) and
+  other downstream MCP servers. Each customer installation has its own Muster endpoint, of the form
+  https://muster.<management-cluster>.<base-domain>/mcp, which the account engineer hands out; it is
+  OAuth-protected via Dex SSO. There is no single public shared endpoint. Clients that only speak
+  stdio can bridge with the muster CLI ("muster agent --mcp-server").
+deployment:
+  mode: both
+  endpoint: https://muster.<management-cluster>.<base-domain>/mcp
+  endpoint_note: Per-installation template documented by Giant Swarm; not a single public URL, so it was not probed.
+  install: muster agent --mcp-server
+  install_note: Local stdio bridge (documented as a fallback). The muster binary is downloaded from the GitHub release and updated with `muster self-update`.
+  package: https://github.com/giantswarm/muster
+  auth: oauth
+  verified: searched
+transport:
+- streamable-http
+- stdio
+repositories:
+- url: https://github.com/giantswarm/muster
+  status: 200
+  latest_release: v5.46.3
+  latest_release_published: '2026-10-18'
+- url: https://github.com/giantswarm/mcp-kubernetes
+  status: 200
+tools_evidence:
+  l3: table
+  evidence_url: https://docs.giantswarm.io/reference/muster/meta-tools/
+  note: Tool names are the ones Giant Swarm publishes (verified by Giant Swarm against Muster v0.10.0). We did not call a live server; tools/list was not observed.
+tools:
+- {name: list_tools, description: List all available tools from connected MCP servers, kind: meta}
+- {name: filter_tools, description: 'Discover tools cheaply, with a bounded, summarized page (pattern, description_filter, query, labels, case_sensitive, include_schema, limit, offset, toolset, include_presets)', kind: meta}
+- {name: describe_tool, description: Get the full description and input schema for one tool, kind: meta}
+- {name: call_tool, description: Execute a tool by name with the given arguments, kind: meta}
+- {name: list_core_tools, description: List Muster's built-in tools only, kind: meta}
+- {name: list_resources, description: List all available MCP resources, kind: meta}
+- {name: describe_resource, description: Get details about one MCP resource, kind: meta}
+- {name: get_resource, description: Retrieve a resource's contents, kind: meta}
+- {name: list_prompts, description: List all available MCP prompts, kind: meta}
+- {name: describe_prompt, description: Get details about one MCP prompt, kind: meta}
+- {name: get_prompt, description: Get a prompt with the given arguments, kind: meta}
+core_tools:
+  note: Built-in core_* tools reachable through call_tool (catalog as of Muster v0.10.0, per the meta-tools reference).
+  authentication: [core_auth_login, core_auth_logout]
+  configuration: [core_config_get]
+  mcp_servers: [core_mcpserver_list, core_mcpserver_get, core_mcpserver_create, core_mcpserver_update, core_mcpserver_delete, core_mcpserver_validate]
+  services: [core_service_list, core_service_status, core_service_start, core_service_stop, core_service_restart]
+  workflows: [core_workflow_list, core_workflow_get, core_workflow_create, core_workflow_update, core_workflow_delete, core_workflow_validate, core_workflow_available, core_workflow_run, core_workflow_execution_list, core_workflow_execution_get]
+  events: [core_events]
+tool_naming:
+  external: x_<server>_<tool> (e.g. x_kubernetes_get_pods)
+  core: core_<area>_<tool>
+  workflow: workflow_<name>
+crosswalk_note: No OpenAPI contract exists in this repo (the platform API is a Kubernetes CRD API), so no tool crosswalk was derived.

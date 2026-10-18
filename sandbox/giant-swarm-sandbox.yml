@@ -1,0 +1,9 @@
+generated: '2026-10-18'
+method: none
+source: https://docs.giantswarm.io
+description: Testing and sandbox environment for Giant Swarm
+docs: []
+note: |
+  No dedicated sandbox or testing environment documentation found for Giant Swarm.
+  The platform appears to be enterprise-focused with managed Kubernetes clusters
+  rather than offering public sandbox/test environments.

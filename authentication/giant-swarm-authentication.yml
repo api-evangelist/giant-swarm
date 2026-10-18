@@ -1,0 +1,27 @@
+generated: '2026-10-18'
+method: searched
+generator: extract-docs-artifacts.py (deepseek)
+source: https://docs.giantswarm.io/overview/architecture/authentication/
+sources:
+- https://docs.giantswarm.io/overview/architecture/authentication/
+- https://docs.giantswarm.io/overview/agent-platform/authentication/
+- https://docs.giantswarm.io/tutorials/access-management/authentication/user/
+- https://docs.giantswarm.io/tutorials/access-management/authentication/automation/
+description: Authentication methods for Giant Swarm platform API and workload clusters
+schemes:
+- type: oauth2
+  name: OAuth2 via Dex
+  evidence: To grant access to it, Giant Swarm sets up a dex instance in the management cluster.
+  flows:
+  - authorization_code
+- type: jwt
+  name: Service Account Token
+  evidence: Every Giant Swarm management cluster provides a service account named automation in the default namespace.
+  header: Authorization
+  location: header
+  how_to_obtain: kubectl --context gs-INSTALLATION --namespace default get secret SECRET_NAME -o jsonpath = '{.data.token}' | base64 --decode
+docs: https://docs.giantswarm.io/overview/architecture/authentication/, https://docs.giantswarm.io/tutorials/access-management/authentication/user/,
+  https://docs.giantswarm.io/tutorials/access-management/authentication/automation/
+note: The documentation describes OAuth2 authentication via Dex for interactive user access and JWT tokens from service accounts for automation.
+  The pages mention Dex connectors but don't specify exact OAuth URLs, scopes, or flows beyond authorization_code. For workload clusters, OIDC
+  is mentioned but not detailed as an authentication scheme.

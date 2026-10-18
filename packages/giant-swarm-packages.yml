@@ -1,0 +1,49 @@
+generated: '2026-10-18'
+method: searched
+source: https://registry.npmjs.org/@giantswarm-io/pro, https://github.com/giantswarm
+description: First-party packages and SDKs for Giant Swarm
+packages:
+- name: '@giantswarm-io/pro'
+  registry: npm
+  url: https://www.npmjs.com/package/@giantswarm-io/pro
+  language: JavaScript
+  official: false
+  version: 1.11.2
+  published: '2026-10-06'
+  note: Core library and MCP server for managing Giant Swarm's roadmap and customer project boards
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: api-schema
+  registry: github
+  url: https://github.com/giantswarm/api-schema
+  language: Go
+  official: true
+  version: null
+  published: null
+  note: Go library for the deprecated Giant Swarm Rest API (found in GitHub org)
+- name: kubectl-gs
+  registry: github
+  url: https://github.com/giantswarm/kubectl-gs
+  language: Go
+  official: true
+  version: null
+  published: null
+  note: CLI plugin for kubectl to interact with Giant Swarm platform API
+- name: muster
+  registry: github
+  url: https://github.com/giantswarm/muster
+  language: Go
+  official: true
+  version: null
+  published: null
+  note: MCP server and CLI for Giant Swarm Agent Platform
+note: 'Giant Swarm provides several first-party tools:
+
+  - @giantswarm-io/pro: npm package for roadmap and project management
+
+  - kubectl-gs: CLI plugin for Kubernetes API interaction
+
+  - muster: MCP server and CLI for Agent Platform
+
+  - Various GitHub repositories for platform components
+
+  No PyPI, RubyGems, or Maven packages found.'

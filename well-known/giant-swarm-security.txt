@@ -1,0 +1,3 @@
+Contact: security@giantswarm.io
+Encryption: https://www.giantswarm.io/.well_known/giantswarm-publickey.asc
+Policy: https://www.giantswarm.io/responsible-disclosure

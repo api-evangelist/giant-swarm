@@ -1,0 +1,10 @@
+generated: '2026-10-18'
+method: none
+source: https://docs.giantswarm.io
+name: Giant Swarm rate limits
+limits: []
+note: |
+  No rate limits documentation found for Giant Swarm APIs.
+  As an enterprise Kubernetes platform, rate limiting is likely
+  handled at the infrastructure level rather than through
+  published API limits.

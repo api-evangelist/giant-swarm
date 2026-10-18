@@ -1,0 +1,51 @@
+generated: '2026-10-18'
+method: searched
+source: https://docs.giantswarm.io/changes/
+description: Changelog for Giant Swarm platform components
+scheme: semantic
+current_version: varies_by_component
+entries:
+- version: v5.43.2
+  date: '2026-10-16'
+  breaking: false
+  highlights:
+  - Fixed: Store the client_id a token was obtained with and refresh with it
+  component: muster
+- version: v3.7.1
+  date: '2026-10-16'
+  breaking: false
+  highlights:
+  - Development and CI/CD: Stop node-build flakes from jest worker oversubscription
+  component: backstage
+- version: v5.43.1
+  date: '2026-10-16'
+  breaking: false
+  highlights:
+  - Fixed: Auth logout revokes both tokens at the advertised revocation endpoint
+  - Fixed: MusterMCPServerFailed is silent for a sibling that is down
+  component: muster
+- version: v4.140.0
+  date: '2026-10-16'
+  breaking: false
+  highlights:
+  - Added: Select Substrate 1.12, the Organizations' credentials by label
+  - Added: The skills credential under the tenant-credential- prefix
+  - Changed: Align files according to platform standards
+  - Fixed: Open the egress gateway to the world on every TCP port
+  component: agent-platform
+- version: v3.7.0
+  date: '2026-10-15'
+  breaking: false
+  highlights:
+  - Added: Keep a compact session header at the top while reading
+  - Changed: Build shell links through route refs
+  - Changed: Map old Agent Platform addresses to the new URL tree
+  - Fixed: Measure context from the newest model call and correct Claude windows
+  - Fixed: Read mcpservers and workflows in muster's namespace when a cluster-wide list is refused
+  component: backstage
+note: |
+  Giant Swarm maintains a comprehensive changelog at https://docs.giantswarm.io/changes/
+  with updates across multiple components: AI Agents (muster, agent-platform),
+  Developer Portal (backstage), CAP releases, connectivity, continuous deployment,
+  fleet management, observability, security, and others.
+  Changes are categorized and include version numbers, dates, and detailed release notes.

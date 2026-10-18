@@ -1,0 +1,40 @@
+generated: '2026-10-18'
+method: searched
+source: https://docs.giantswarm.io/reference/kubectl-gs/
+description: Command-line tools for Giant Swarm platform
+install: |
+  kubectl krew install gs
+  # or via Homebrew: brew install giantswarm/tap/kubectl-gs
+commands:
+- group: cluster
+  commands:
+  - get clusters: List workload clusters
+  - template cluster: Create a cluster manifest
+  - update cluster: Update a cluster
+- group: app
+  commands:
+  - get apps: List installed apps
+  - template app: Create an app manifest
+  - update app: Update an app
+- group: catalog
+  commands:
+  - get catalogs: List available catalogs
+  - template catalog: Create a catalog manifest
+- group: organization
+  commands:
+  - get organizations: List organizations
+  - template organization: Create an organization manifest
+- group: nodepool
+  commands:
+  - get nodepools: List node pools
+- group: release
+  commands:
+  - get releases: List releases
+- group: authentication
+  commands:
+  - login: Authenticate with the platform
+note: |
+  kubectl-gs is a kubectl plugin for interacting with Giant Swarm's platform API.
+  It provides commands for managing clusters, apps, catalogs, organizations,
+  node pools, and releases. Installation is via krew or Homebrew.
+  Also available: muster CLI for Agent Platform and gitops CLI for GitOps workflows.

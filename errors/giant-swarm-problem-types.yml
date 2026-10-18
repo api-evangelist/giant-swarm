@@ -1,0 +1,9 @@
+generated: '2026-10-18'
+method: none
+source: https://docs.giantswarm.io
+format: unknown
+problems: []
+note: |
+  No specific error reference or problem types documentation found in Giant Swarm documentation.
+  The platform uses Kubernetes-style APIs which typically return standard HTTP status codes
+  and Kubernetes error structures, but no dedicated error catalog was published.
