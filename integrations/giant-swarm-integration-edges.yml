@@ -17,6 +17,9 @@ checked:
 - https://zapier.com/apps/giant-swarm/integrations
 - https://zapier.com/apps/giantswarm/integrations
 - artifact-hub/integrations/artifact-hub-integration-edges.yml
+- https://aur.archlinux.org/cgit/aur.git/tree/.SRCINFO
+- https://aur.archlinux.org/packages-meta-ext-v1.json.gz
+- https://aur.archlinux.org/rpc/v5/info
 summary: null
 marketplace_apps: []
 edges:
@@ -174,6 +177,40 @@ edges:
   category: Artifact Hub listing (Helm chart)
   badges:
   - 'Verified publisher (Artifact Hub verified publisher: repository ownership proven)'
+- partner_name: Arch User Repository (AUR)
+  partner: null
+  partner_match: null
+  type: register
+  direction: provider-built
+  category: official CLI (Arch User Repository (AUR))
+  evidence: https://aur.archlinux.org/packages/gsctl-bin
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: Arch User Repository (AUR) (public package index)
+    spec_file: null
+    packages:
+    - name: gsctl-bin
+      kind: aur
+      version: 1.1.6-1
+      released: '2022-06-30'
+      released_field: AUR LastModified
+      out_of_date: false
+      lapsed: true
+      page: https://aur.archlinux.org/packages/gsctl-bin
+      upstream: https://github.com/giantswarm/gsctl/
+      cli: 'AUR description: The Giant Swarm command line interface'
+      repo_leg: github-org:giantswarm
+      publisher_leg: artifact-github-org:giantswarm
+      matched_by: github-org
+    current: false
+    signal_note: 'the provider''s own command-line tool packaged for Arch Linux (community-maintained PKGBUILD whose
+      upstream and source artifact are the provider''s): distribution, not an integration; lapsed = flagged out-of-date
+      or not updated in 24 months'
+    detected_by: sweep-aur-vendor-cli-packages.py
+    detected: '2026-10-23'
+  detected_by: sweep-aur-vendor-cli-packages.py
+  first_seen: '2026-10-23'
 templates: []
 note: 'No integration marketplace listings found for Giant Swarm on Zapier or other platforms.
 
